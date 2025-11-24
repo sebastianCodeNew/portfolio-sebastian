@@ -1,26 +1,115 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* NeoVision Dark Theme - Futuristic Tech & VR */
+    --background: 220 15% 4%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 15% 6%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 15% 6%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 15% 4%;
+
+    --secondary: 265 100% 62%;
+    --secondary-foreground: 220 15% 4%;
+
+    --muted: 220 10% 15%;
+    --muted-foreground: 210 10% 64%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 15% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 12%;
+    --input: 220 15% 12%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom NeoVision Colors */
+    --neon-blue: 195 100% 50%;
+    --neon-purple: 265 100% 62%;
+    --surface: 220 15% 6%;
+    --glow-blue: 195 100% 50%;
+    --glow-purple: 265 100% 62%;
+
+    /* Transition */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection colors */
+  ::selection {
+    background: hsl(var(--neon-blue) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+
+  /* Glow utilities */
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(var(--glow-blue) / 0.3);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(var(--glow-purple) / 0.3);
+  }
+
+  .glow-blue-strong {
+    box-shadow: 0 0 40px hsl(var(--glow-blue) / 0.5);
+  }
+
+  .glow-purple-strong {
+    box-shadow: 0 0 40px hsl(var(--glow-purple) / 0.5);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[hsl(var(--neon-blue))] to-[hsl(var(--neon-purple))] bg-clip-text text-transparent;
+  }
+
+  /* Neon border */
+  .neon-border-blue {
+    border: 1px solid hsl(var(--neon-blue) / 0.5);
+  }
+
+  .neon-border-purple {
+    border: 1px solid hsl(var(--neon-purple) / 0.5);
+  }
 }
