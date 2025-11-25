@@ -40,7 +40,7 @@ export const projects: Project[] = [
     description:
       "AI-powered movie genre prediction using state-of-the-art CLIP and BERT models. Research on Implementation of Convolutional Neural Network (CNN) and Contrastive Language-Image Pretraining (CLIP) for film genre prediction based on poster analysis. Published in Jurnal Dharmawangsa.",
     techStack: ["Python", "CNN", "CLIP", "BERT", "Deep Learning", "Next.js", "FastAPI"],
-    github: "https://github.com/sebastianCodeNew",
+    github: "https://github.com/sebastianCodeNew/portfolio-sebastian",
     demo: "https://clip-movie-classifier.vercel.app/",
     image: "/images/film-genre-app.png",
   },
