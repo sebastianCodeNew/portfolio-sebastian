@@ -38,11 +38,11 @@ export const projects: Project[] = [
     id: "film-genre-prediction",
     title: "Film Genre Prediction (CNN + CLIP)",
     description:
-      "Research on Implementation of Convolutional Neural Network (CNN) and Contrastive Language-Image Pretraining (CLIP) for film genre prediction based on poster analysis. Published in Jurnal Dharmawangsa.",
-    techStack: ["Python", "CNN", "CLIP", "Deep Learning", "Research"],
-    github: "https://github.com/sebastianCodeNew", // Placeholder as specific repo wasn't provided
-    demo: "https://jurnal.dharmawangsa.ac.id/index.php/syntax/article/view/6492/pdf",
-    image: "/images/project-genre.jpg", // Keeping placeholder image for now
+      "AI-powered movie genre prediction using state-of-the-art CLIP and BERT models. Research on Implementation of Convolutional Neural Network (CNN) and Contrastive Language-Image Pretraining (CLIP) for film genre prediction based on poster analysis. Published in Jurnal Dharmawangsa.",
+    techStack: ["Python", "CNN", "CLIP", "BERT", "Deep Learning", "Next.js", "FastAPI"],
+    github: "https://github.com/sebastianCodeNew",
+    demo: "https://clip-movie-classifier.vercel.app/",
+    image: "/images/film-genre-app.png",
   },
   {
     id: "lpr-system",
